@@ -20,7 +20,7 @@ Posle toga, element matrice, `a[i,j]` može se dobiti izrazom `a[i*n+j]`.
 
 Karakteristika prikazanog načina stvaranja dinamičkog višedimenzionalnog niza jeste da se svi elementi, bez obzira na dimenzionalnost, smeštaju u jedan blok uzastopnih memorijskih lokacija. Takođe, nema dodatnog utroška memorije, osim za jedan pokazivač na sam početak niza.
 
-### Matrica kao niz nizova
+### Matrica kao niz pokazivača
 
 Ovo je u neku ruku fleksibilniji način. Može se realizovati korišćenjem pokazivača, tako da komponentni nizovi budu medjusobno **nezavisno** smešteni u memoriji. U tu svrhu treba da se obrazuje niz pokazivača od kojih svaki pokazuje na jedan od komponentnih nizova.
 
@@ -56,6 +56,10 @@ Umesto `*(a[i]+j)` moglo se slobodno pisati `a[i][j]`, a takodje i `*(*(a+i)+j)`
 
 Prethodno formirana matrica nije prava dinamička matrica, jer je veličina niza pokazivača na matrice definisana statički. To nameće ograničenja za maksimalni broj vrsta matrice. **Vrlo lako može da se oslobodi i tog ograničenja ako se za pristup matrici statički predvidi samo jedan skalaran pokazivač, a niz pokazivača na vrste matrice se stvara dinamički.**
 
+### Matrica kao pokazivač na pokazivače
 
+U sledećem programu se za potrebe pristupa matrici tipa **int**, sa `**a` definiše samo skalaran pokazivač na pokazivače na celobrojne podatke.
 
+```C
 
+```
