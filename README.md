@@ -61,5 +61,28 @@ Prethodno formirana matrica nije prava dinamička matrica, jer je veličina niza
 U sledećem programu se za potrebe pristupa matrici tipa **int**, sa `**a` definiše samo skalaran pokazivač na pokazivače na celobrojne podatke.
 
 ```C
+#include <stdio.h>
+#include <stdlib.h>
 
+int main()
+{
+  int **a;
+  int m, n;
+  
+  scanf("%d %d", &m, &n);
+  
+  //Stvaranje matrice
+  a=malloc(m*sizeof(int*));  //dodatak u odnosu na prethodni kod
+  for(int i=0; i<m; i++)
+  {
+    *(a+i)=malloc(n*sizeof(int));
+    for(int j=0; j<n; j++)
+      printf("%4.4d", *(*(a+i)+j)=100*i+j);
+    printf("\n");
+  }
+  
+  //Unistavanje matrice
+  for(int i=0; i<m; i++) free(*(a+i));
+  free(a);  //dodatak u odnosu na prethodni kod
+}
 ```
