@@ -52,4 +52,10 @@ int main()
   for(int i=0; i<m; i++) free(a[i]);
 }
 ```
+Umesto `*(a[i]+j)` moglo se slobodno pisati `a[i][j]`, a takodje i `*(*(a+i)+j)`.
+
+Prethodno formirana matrica nije prava dinamička matrica, jer je veličina niza pokazivača na matrice definisana statički. To nameće ograničenja za maksimalni broj vrsta matrice. **Vrlo lako može da se oslobodi i tog ograničenja ako se za pristup matrici statički predvidi samo jedan skalaran pokazivač, a niz pokazivača na vrste matrice se stvara dinamički.**
+
+
+
 
