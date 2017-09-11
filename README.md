@@ -32,7 +32,7 @@ Sledeći program stvara celobrojnu matricu od *m* vrsta i *n* kolona pomoću *m*
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
   int *a[20];
   int m, n;
@@ -64,7 +64,7 @@ U sledećem programu se za potrebe pristupa matrici tipa **int**, sa `**a` defin
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
   int **a;
   int m, n;
